@@ -1,0 +1,83 @@
+{
+  "name": "RescueRequest",
+  "type": "object",
+  "properties": {
+    "match_id": {
+      "type": "string"
+    },
+    "objective_id": {
+      "type": "string"
+    },
+    "requested_by": {
+      "type": "string"
+    },
+    "blocker": {
+      "type": "string"
+    },
+    "requested_help": {
+      "type": "string"
+    },
+    "relevant_links": {
+      "type": "string"
+    },
+    "retain_responsibility": {
+      "type": "boolean",
+      "default": true
+    },
+    "blocked_on_objective_id": {
+      "type": "string"
+    },
+    "helper_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "volunteered",
+        "resolved",
+        "cancelled"
+      ],
+      "enumColors": [
+        "red",
+        "yellow",
+        "green",
+        "gray"
+      ],
+      "default": "open"
+    },
+    "resolved_at": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "match_id",
+    "objective_id",
+    "requested_by"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

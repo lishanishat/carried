@@ -1,0 +1,84 @@
+{
+  "name": "Review",
+  "type": "object",
+  "properties": {
+    "match_id": {
+      "type": "string"
+    },
+    "evidence_id": {
+      "type": "string"
+    },
+    "objective_id": {
+      "type": "string"
+    },
+    "reviewer_id": {
+      "type": "string",
+      "description": "Player id, or 'ai' for the referee"
+    },
+    "reviewer_name": {
+      "type": "string"
+    },
+    "recommendation": {
+      "type": "string",
+      "enum": [
+        "CONFIRMED",
+        "NEEDS_REVISION",
+        "INSUFFICIENT_EVIDENCE"
+      ],
+      "enumColors": [
+        "green",
+        "pink",
+        "red"
+      ]
+    },
+    "explanation": {
+      "type": "string"
+    },
+    "requirements_met": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "requirements_missing": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "confidence": {
+      "type": "number"
+    },
+    "is_ai": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "match_id",
+    "evidence_id",
+    "recommendation"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

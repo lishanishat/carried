@@ -1,0 +1,77 @@
+{
+  "name": "TagInRequest",
+  "type": "object",
+  "properties": {
+    "match_id": {
+      "type": "string"
+    },
+    "objective_id": {
+      "type": "string"
+    },
+    "original_owner_id": {
+      "type": "string"
+    },
+    "accepting_owner_id": {
+      "type": "string"
+    },
+    "finished_work": {
+      "type": "string"
+    },
+    "remaining_work": {
+      "type": "string"
+    },
+    "resource_links": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "accepted",
+        "cancelled"
+      ],
+      "enumColors": [
+        "pink",
+        "green",
+        "gray"
+      ],
+      "default": "open"
+    },
+    "requested_at": {
+      "type": "string"
+    },
+    "accepted_at": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "match_id",
+    "objective_id",
+    "original_owner_id"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

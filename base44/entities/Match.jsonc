@@ -1,0 +1,111 @@
+{
+  "name": "Match",
+  "type": "object",
+  "properties": {
+    "join_code": {
+      "type": "string",
+      "description": "Four letter uppercase join code"
+    },
+    "title": {
+      "type": "string",
+      "description": "Project title"
+    },
+    "brief": {
+      "type": "string",
+      "description": "Raw project brief from the host"
+    },
+    "deadline": {
+      "type": "string",
+      "description": "ISO datetime deadline"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "lobby",
+        "draft",
+        "live",
+        "finished"
+      ],
+      "enumColors": [
+        "gray",
+        "yellow",
+        "green",
+        "blue"
+      ],
+      "default": "lobby"
+    },
+    "team_size": {
+      "type": "number",
+      "default": 3
+    },
+    "host_player_id": {
+      "type": "string"
+    },
+    "overview": {
+      "type": "string",
+      "description": "AI project overview"
+    },
+    "settings": {
+      "type": "object",
+      "description": "Scoring + caster settings"
+    },
+    "final_boss_active": {
+      "type": "boolean",
+      "default": false
+    },
+    "started_at": {
+      "type": "string"
+    },
+    "ended_at": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "object",
+      "description": "Final results payload"
+    },
+    "member_tokens": {
+      "type": "object",
+      "description": "player id -> secure participant token, used to authorize requests"
+    },
+    "state_cache": {
+      "type": "object",
+      "description": "Snapshot of the match state served to every device"
+    },
+    "is_demo": {
+      "type": "boolean",
+      "default": false,
+      "description": "True only for the fictional demo match. Never set on a real user match."
+    },
+    "demo_owner_token": {
+      "type": "string",
+      "description": "Secret held only by the device that opened the demo; required to reset demo data"
+    }
+  },
+  "required": [
+    "join_code",
+    "title",
+    "status"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

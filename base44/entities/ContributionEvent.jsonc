@@ -1,0 +1,70 @@
+{
+  "name": "ContributionEvent",
+  "type": "object",
+  "properties": {
+    "match_id": {
+      "type": "string"
+    },
+    "objective_id": {
+      "type": "string"
+    },
+    "player_id": {
+      "type": "string"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "objective_confirmed",
+        "rescue_assist",
+        "tagin_assist",
+        "clean_handoff",
+        "review_help"
+      ],
+      "enumColors": [
+        "green",
+        "blue",
+        "purple",
+        "yellow",
+        "gray"
+      ]
+    },
+    "verified_points": {
+      "type": "number",
+      "default": 0
+    },
+    "note": {
+      "type": "string"
+    },
+    "dedupe_key": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "match_id",
+    "player_id",
+    "event_type",
+    "dedupe_key"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

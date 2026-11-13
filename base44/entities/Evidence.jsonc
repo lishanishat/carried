@@ -1,0 +1,70 @@
+{
+  "name": "Evidence",
+  "type": "object",
+  "properties": {
+    "match_id": {
+      "type": "string"
+    },
+    "objective_id": {
+      "type": "string"
+    },
+    "submitted_by": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "resource_reference": {
+      "type": "string"
+    },
+    "file_uri": {
+      "type": "string"
+    },
+    "review_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "confirmed",
+        "needs_revision",
+        "insufficient"
+      ],
+      "enumColors": [
+        "yellow",
+        "green",
+        "pink",
+        "red"
+      ],
+      "default": "pending"
+    },
+    "submitted_at": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "match_id",
+    "objective_id",
+    "submitted_by"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

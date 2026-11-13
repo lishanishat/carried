@@ -1,0 +1,116 @@
+{
+  "name": "Objective",
+  "type": "object",
+  "properties": {
+    "match_id": {
+      "type": "string"
+    },
+    "role_id": {
+      "type": "string"
+    },
+    "owner_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "acceptance_criteria": {
+      "type": "string"
+    },
+    "effort_points": {
+      "type": "number",
+      "default": 100
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "Easy",
+        "Medium",
+        "Hard"
+      ],
+      "enumColors": [
+        "green",
+        "yellow",
+        "red"
+      ],
+      "default": "Medium"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "available",
+        "in_progress",
+        "blocked",
+        "tag_in_requested",
+        "under_review",
+        "confirmed",
+        "needs_revision"
+      ],
+      "enumColors": [
+        "blue",
+        "purple",
+        "red",
+        "pink",
+        "yellow",
+        "green",
+        "pink"
+      ],
+      "default": "available"
+    },
+    "deadline": {
+      "type": "string"
+    },
+    "order": {
+      "type": "number",
+      "default": 0
+    },
+    "blocked_reason": {
+      "type": "string"
+    },
+    "blocked_on_objective_id": {
+      "type": "string"
+    },
+    "previous_owner_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "submitted_at": {
+      "type": "string"
+    },
+    "confirmed_at": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "match_id",
+    "title",
+    "status"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

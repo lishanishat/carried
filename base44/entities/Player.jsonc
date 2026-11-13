@@ -1,0 +1,56 @@
+{
+  "name": "Player",
+  "type": "object",
+  "properties": {
+    "match_id": {
+      "type": "string"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "participant_token": {
+      "type": "string",
+      "description": "Unguessable capability token for this player"
+    },
+    "role_id": {
+      "type": "string"
+    },
+    "is_host": {
+      "type": "boolean",
+      "default": false
+    },
+    "joined_at": {
+      "type": "string"
+    },
+    "last_seen": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "match_id",
+    "display_name",
+    "participant_token"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
