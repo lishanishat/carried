@@ -196,8 +196,6 @@ Run during repository preparation (November 13, 2026):
 
 Built by **Lisha Nishat** and **Manank Joshi** (team *Based*) at Base44 Build Night, SJSU, using Base44's AI-assisted app builder.
 
-Thanks to **Bradley Haraguchi** for hosting the event, and to **Base44** for the platform.
-
 ## License
 
 Not yet selected. All rights reserved by the authors until a license is chosen.
